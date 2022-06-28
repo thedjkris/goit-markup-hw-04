@@ -372,29 +372,16 @@ img {
 .feature-iteam:not(:last-child) {
   margin-right: 30px;
 }
-.feature-iteam::before {
-  content: '';
-  height: 120px;
-  display: block;
-  background-color: #f5f4fa;
-  border-radius: 4px;
-  margin-bottom: 30px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 /* іконки */
-.icon-antenna::before {
-  background-image: url(../images/iconwork/antenna.svg);
-}
-.icon-clock::before {
-  background-image: url(../images/iconwork/clock.svg);
-}
-.icon-diagram::before {
-  background-image: url(../images/iconwork/diagram.svg);
-}
-.icon-astronaut::before {
-  background-image: url(../images/iconwork/astronaut.svg);
+.feature-icon {
+  display: flex;
+  min-width: 270px;
+  min-height: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f4fa;
+  margin-bottom: 30px;
 }
 /* кінець іконок */
 .feature {
