@@ -12,6 +12,8 @@
   /* Інші */
   --items: 9;
   --indent: 30px;
+  /* іконки */
+  --team-icon-collor: #afb1b8;
 }
 /* Сітка */
 .card-set-item {
@@ -26,7 +28,7 @@
 }
 /* Кінець сітки */
 .pages {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', 'sans-serif';
   color: #212121;
   font-size: 14px;
 }
@@ -93,11 +95,20 @@ img {
   letter-spacing: 0.02em;
   color: var(--secondary-collor);
   padding: 32px 0;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--accent-collor);
+}
+.contacts-envelope {
+  fill: currentColor;
+  margin-right: 10px;
+}
+.contacts-smartphone {
+  fill: currentColor;
+  margin-right: 10px;
 }
 
 /* Навігація Хедер */
@@ -186,6 +197,8 @@ img {
   background-color: var(--accent-collor);
   color: var(--accent-text);
   border-color: var(--accent-collor);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .button-secondary.current {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -217,6 +230,12 @@ img {
 .portfolio-list {
   background-color: var(--background-color);
   margin: calc(var(--indent) / 2);
+}
+.portfolio-list:hover,
+.portfolio-list:focus {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .description {
   font-weight: 400;
@@ -304,8 +323,16 @@ img {
 }
 /*Головна кнопка */
 .hero {
+  display: flex;
   padding: 200px 0;
   background-color: var(--secondarybg-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4) 45%, rgba(47, 48, 58, 0.4) 0%),
+    url(../images/hero/imgoverlay.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  max-width: 1600px;
 }
 .container.background-div {
   display: flex;
@@ -323,6 +350,9 @@ img {
   font-weight: 700;
   padding: 10px 32px;
   border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
 }
 .button-primary:hover,
 .button-primary:focus {
@@ -342,6 +372,31 @@ img {
 .feature-iteam:not(:last-child) {
   margin-right: 30px;
 }
+.feature-iteam::before {
+  content: '';
+  height: 120px;
+  display: block;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* іконки */
+.icon-antenna::before {
+  background-image: url(../images/iconwork/antenna.svg);
+}
+.icon-clock::before {
+  background-image: url(../images/iconwork/clock.svg);
+}
+.icon-diagram::before {
+  background-image: url(../images/iconwork/diagram.svg);
+}
+.icon-astronaut::before {
+  background-image: url(../images/iconwork/astronaut.svg);
+}
+/* кінець іконок */
 .feature {
   font-family: 'Roboto';
   font-style: normal;
@@ -353,10 +408,8 @@ img {
   margin-bottom: 10px;
 }
 .feature-p {
-  font-style: normal;
   font-weight: 400;
   line-height: 1.7;
-  letter-spacing: 0.03em;
   color: var(--secondary-collor);
 }
 /* Наша команда */
@@ -426,4 +479,120 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--secondary-collor);
+}
+/* іконки команди */
+.team-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.icon-list {
+  list-style: none;
+}
+.icon-list:not(:last-child) {
+  margin-right: 10px;
+}
+.icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--team-icon-collor);
+}
+.icon-link:hover,
+.icon-link:focus {
+  color: var(--accent-text);
+  background-color: var(--accent-collor);
+}
+.team-icon-list {
+  fill: currentColor;
+}
+/* іконки клієнтів */
+.customer-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-collor);
+  margin-bottom: 50px;
+}
+.customer-list {
+  display: flex;
+}
+.customer-item {
+  list-style: none;
+}
+.customer-item:not(:last-child) {
+  margin-right: 30px;
+}
+.customer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--team-icon-collor);
+  border-radius: 4px;
+  color: var(--team-icon-collor);
+}
+.customer-link:hover,
+.customer-link:focus {
+  color: var(--accent-collor);
+  border: 1px solid var(--accent-collor);
+}
+.customer-icon {
+  fill: currentColor;
+  width: 106px;
+  height: 60px;
+}
+/* футер іконки */
+.about-footer .container {
+  display: flex;
+}
+.secondary-footer {
+  margin-left: 70px;
+  padding-top: 15px;
+}
+.primary-footer {
+  min-width: 231px;
+}
+.footer-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 20px;
+}
+.footer-icon {
+  display: flex;
+}
+.footer-list {
+  list-style: none;
+}
+.footer-list:not(:last-child) {
+  margin-right: 10px;
+}
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  background-color: var(--accent-collor);
+}
+.footer-svg {
+  fill: var(--accent-text);
 }
